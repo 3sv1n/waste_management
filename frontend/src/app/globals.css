@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --background: #f8f9fa;
+  --foreground: #212529;
+  --card-bg: #ffffff;
+  --card-border: #e9ecef;
+  
+  --primary: #3b82f6;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --secondary: #6c757d;
+
+  --radius-lg: 12px;
+  --radius-md: 8px;
+  
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #111827;
+    --foreground: #f9fafb;
+    --card-bg: #1f2937;
+    --card-border: #374151;
+  }
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+  background-color: var(--background);
+  color: var(--foreground);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 600;
+  color: var(--foreground);
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.glass-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-sm);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.glass-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+/* Badge styles */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.badge-primary { background-color: rgba(59, 130, 246, 0.1); color: var(--primary); }
+.badge-success { background-color: rgba(16, 185, 129, 0.1); color: var(--success); }
+.badge-warning { background-color: rgba(245, 158, 11, 0.1); color: var(--warning); }
+.badge-danger { background-color: rgba(239, 68, 68, 0.1); color: var(--danger); }
+.badge-secondary { background-color: rgba(108, 117, 125, 0.1); color: var(--secondary); }
+
+/* Colors for specific items based on data.yaml classes */
+.item-cardboard { border-left: 4px solid var(--warning); }
+.item-glass { border-left: 4px solid #0ea5e9; }
+.item-metal { border-left: 4px solid #64748b; }
+.item-paper { border-left: 4px solid var(--primary); }
+.item-plastic { border-left: 4px solid var(--success); }
+.item-trash { border-left: 4px solid var(--danger); }

@@ -1,0 +1,165 @@
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--card-border);
+}
+
+.titleContainer {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.logo {
+  color: var(--success);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.subtitle {
+  font-size: 0.875rem;
+  color: var(--secondary);
+}
+
+.statusContainer {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  font-size: 0.875rem;
+}
+
+.status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--secondary);
+}
+
+.statusDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background-color: var(--success);
+  box-shadow: 0 0 0 2px rgba(16, 185, 129, 0.2);
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.4); }
+  70% { box-shadow: 0 0 0 6px rgba(16, 185, 129, 0); }
+  100% { box-shadow: 0 0 0 0 rgba(16, 185, 129, 0); }
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.card {
+  padding: 1.5rem;
+}
+
+.cardTitle {
+  font-size: 0.875rem;
+  color: var(--secondary);
+  margin-bottom: 0.5rem;
+}
+
+.cardValue {
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.chartsGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.chartCard {
+  padding: 1.5rem;
+  min-height: 350px;
+  display: flex;
+  flex-direction: column;
+}
+
+.chartTitle {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+  color: var(--secondary);
+}
+
+.chartWrapper {
+  flex: 1;
+  width: 100%;
+  min-height: 250px;
+}
+
+.fullWidthCard {
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table th {
+  text-align: left;
+  padding: 1rem;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  color: var(--secondary);
+  border-bottom: 1px solid var(--card-border);
+}
+
+.table td {
+  padding: 1rem;
+  border-bottom: 1px solid var(--card-border);
+  font-size: 0.875rem;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Specific item colors */
+.colorCardboard { color: var(--warning); }
+.colorGlass { color: #0ea5e9; }
+.colorMetal { color: #64748b; }
+.colorPaper { color: var(--primary); }
+.colorPlastic { color: var(--success); }
+.colorTrash { color: var(--danger); }
+
+@media (max-width: 768px) {
+  .chartsGrid {
+    grid-template-columns: 1fr;
+  }
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+  }
+  .statusContainer {
+    width: 100%;
+    justify-content: space-between;
+  }
+}
