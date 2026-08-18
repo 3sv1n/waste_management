@@ -1,4 +1,4 @@
-from pydantic import BaseModel
+from pydantic import BaseModel, ConfigDict
 from datetime import datetime
 
 class DetectionBase(BaseModel):
@@ -7,10 +7,9 @@ class DetectionBase(BaseModel):
     category: str
 
 class DetectionResponse(DetectionBase):
+    model_config = ConfigDict(from_attributes=True)
+
     id: int
     timestamp: datetime
     image_path: str
 
-    class Config:
-        orm_mode = True
-        from_attributes = True

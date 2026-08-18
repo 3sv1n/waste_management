@@ -25,6 +25,7 @@
 *.pem
 __pycache__/
 .vscode/
+.VSCodeCounter/
 
 # debug
 npm-debug.log*
